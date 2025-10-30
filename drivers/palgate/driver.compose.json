@@ -1,0 +1,134 @@
+{
+  "name": {
+    "en": "PalGate Device"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "class": "garagedoor",
+  "capabilities": [
+    "garagedoor_closed",
+    "button.open_gate"
+  ],
+  "capabilitiesOptions": {
+    "button.open_gate": {
+      "maintenanceAction": false,
+      "title": {
+        "en": "Open Gate"
+      },
+      "desc": {
+        "en": "Press to open the gate"
+      }
+    }
+  },
+  "icon": "drivers/palgate/assets/icon.svg",
+  "images": {
+    "small": "drivers/palgate/assets/images/driver_small.png",
+    "large": "drivers/palgate/assets/images/driver_large.png",
+    "xlarge": "drivers/palgate/assets/images/driver_xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "get_credentials"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Settings"
+      },
+      "children": [
+        {
+          "id": "deviceId",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": "",
+          "hint": {
+            "en": "Your PalGate device ID from the app"
+          }
+        },
+        {
+          "id": "phoneNumber",
+          "type": "text",
+          "label": {
+            "en": "Phone Number"
+          },
+          "value": "",
+          "hint": {
+            "en": "Phone number with country code (e.g., 972501234567)"
+          }
+        },
+        {
+          "id": "token",
+          "type": "password",
+          "label": {
+            "en": "Session Token"
+          },
+          "value": "",
+          "hint": {
+            "en": "32-character session token from PalGate app"
+          }
+        },
+        {
+          "id": "tokenType",
+          "type": "dropdown",
+          "label": {
+            "en": "Token Type"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "SMS (0)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Primary (1)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Secondary (2)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Token type from your PalGate app configuration"
+          }
+        },
+        {
+          "id": "resetDelay",
+          "type": "number",
+          "label": {
+            "en": "Reset Delay (seconds)"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 30,
+          "hint": {
+            "en": "How long before the gate status resets after opening"
+          }
+        }
+      ]
+    }
+  ]
+}

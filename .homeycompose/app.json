@@ -1,0 +1,30 @@
+{
+  "id": "com.shpala.palgate",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "name": {
+    "en": "PalGate"
+  },
+  "description": {
+    "en": "Control your PalGate entrance gates and barriers"
+  },
+  "category": [
+    "security"
+  ],
+  "brandColor": "#1E3A8A",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/app_small.png",
+    "large": "/assets/images/app_large.png",
+    "xlarge": "/assets/images/app_xlarge.png"
+  },
+  "author": {
+    "name": "Pavel Ferencz",
+    "email": "shpala@gmail.com"
+  }
+}
